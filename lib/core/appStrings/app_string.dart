@@ -11,5 +11,6 @@ class AppString {
   static const String forgetPassword = "Forget password?";
   static const String forgetPasswordtext = "Forget password";
   static const String dontHaveAccount = "Don't have an account?";
-  static const String HaveAnAccount = "have an account?";
+  static const String haveAnAccount = "have an account?";
+  static const String totalExpense = "Total Expenses";
 }

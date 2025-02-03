@@ -95,7 +95,7 @@ class _SignupScreenState extends State<SignupScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text(AppString.HaveAnAccount,
+                Text(AppString.haveAnAccount,
                     style: Theme.of(context)
                         .textTheme
                         .bodySmall!
@@ -113,7 +113,11 @@ class _SignupScreenState extends State<SignupScreen> {
               ],
             ),
             const SizedBox(height: 32),
-            CustomButton(onPressed: () {}, buttonName: AppString.singUpBtn)
+            CustomButton(
+                onPressed: () {
+                  Get.toNamed(AppRoutes.darhboardScreen);
+                },
+                buttonName: AppString.singUpBtn)
           ],
         ),
       ),
