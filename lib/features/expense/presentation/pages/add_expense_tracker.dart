@@ -141,7 +141,7 @@ class _AddExpenseScreenState extends State<AddExpenseScreen> {
                     }
                   },
                   buttonName:
-                      widget.expense == null ? 'Add Expense' : 'Update Expense')
+                      widget.expense == null ? 'Add Expense' : 'Update Expense',isFormValid: false,)
             ],
           ),
         ),

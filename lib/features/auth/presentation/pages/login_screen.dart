@@ -76,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
               obscureText: _obscureText,
             ),
             const SizedBox(height: 24),
-            CustomButton(onPressed: () {}, buttonName: AppString.loginBtn),
+            CustomButton(onPressed: () {}, buttonName: AppString.loginBtn,isFormValid: false,),
             const SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

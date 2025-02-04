@@ -1,6 +1,7 @@
 import 'package:expensetrackerapp/config/routes/app_routes.dart';
 import 'package:expensetrackerapp/core/appColors/app_colors.dart';
 import 'package:expensetrackerapp/core/appStrings/app_string.dart';
+import 'package:expensetrackerapp/features/auth/presentation/controller/auth_controller.dart';
 import 'package:expensetrackerapp/features/auth/presentation/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,6 +18,12 @@ class _SignupScreenState extends State<SignupScreen> {
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  final authController = Get.find<AuthController>();
+
+  bool get _isFormValid =>
+      _nameController.text.isNotEmpty &&
+      _emailController.text.isNotEmpty &&
+      _passwordController.text.isNotEmpty;
 
   @override
   Widget build(BuildContext context) {
@@ -115,9 +122,16 @@ class _SignupScreenState extends State<SignupScreen> {
             const SizedBox(height: 32),
             CustomButton(
                 onPressed: () {
-                  Get.toNamed(AppRoutes.darhboardScreen);
+                  if (_isFormValid) {
+                    authController.registerUser("1", _nameController.text,
+                        _emailController.text, _passwordController.text);
+                    Get.toNamed(AppRoutes.darhboardScreen);
+                  } else {
+                    Get.snackbar("", "");
+                  }
                 },
-                buttonName: AppString.singUpBtn)
+                buttonName: AppString.singUpBtn,
+                isFormValid: _isFormValid)
           ],
         ),
       ),

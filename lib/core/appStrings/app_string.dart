@@ -13,4 +13,11 @@ class AppString {
   static const String dontHaveAccount = "Don't have an account?";
   static const String haveAnAccount = "have an account?";
   static const String totalExpense = "Total Expenses";
+  static const String userAlreadyExist = "User already exists";
+  static const String invalidPassword = "Invalid password";
+  static const String userNotFound = "User not found";
+  static const String success = "Success";
+  static const String oopsError = "Oops!, Error";
+  static const String userRegisteredSuccess = "User Registered Successfully";
+  static const String loggedInSuccess = "Logged In Successfully";
 }
