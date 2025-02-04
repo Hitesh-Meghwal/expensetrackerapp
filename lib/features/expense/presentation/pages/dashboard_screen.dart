@@ -1,6 +1,6 @@
 import 'package:expensetrackerapp/core/appColors/app_colors.dart';
 import 'package:expensetrackerapp/core/appStrings/app_string.dart';
-import 'package:expensetrackerapp/features/auth/presentation/pages/add_expense_tracker.dart';
+import 'package:expensetrackerapp/features/expense/presentation/pages/add_expense_tracker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';

@@ -1,5 +1,5 @@
-import 'package:expensetrackerapp/features/auth/presentation/pages/add_expense_tracker.dart';
-import 'package:expensetrackerapp/features/auth/presentation/pages/dashboard_screen.dart';
+import 'package:expensetrackerapp/features/expense/presentation/pages/add_expense_tracker.dart';
+import 'package:expensetrackerapp/features/expense/presentation/pages/dashboard_screen.dart';
 import 'package:expensetrackerapp/features/auth/presentation/pages/login_screen.dart';
 import 'package:expensetrackerapp/features/auth/presentation/pages/signup_screen.dart';
 import 'package:get/get.dart';
