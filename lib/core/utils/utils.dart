@@ -1,3 +1,4 @@
+import 'package:expensetrackerapp/core/appColors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -6,19 +7,18 @@ class Utils {
     Get.snackbar(
       title,
       message,
-      backgroundColor:
-          Colors.deepPurple.shade900, // Dark galaxy-inspired background
-      colorText: Colors.white, // White text for contrast
-      snackPosition: SnackPosition.BOTTOM, // Positioned at the bottom
-      margin: EdgeInsets.all(16), // Adds margin around the snackbar
-      borderRadius: 8, // Rounded corners
-      duration: Duration(seconds: 3), // Snackbar duration
-      animationDuration: Duration(milliseconds: 500), // Smooth animation
+      backgroundColor: AppColors.primaryColor,
+      colorText: Colors.white,
+      snackPosition: SnackPosition.BOTTOM,
+      margin: const EdgeInsets.all(16),
+      borderRadius: 8,
+      duration: const Duration(seconds: 3),
+      animationDuration: const Duration(milliseconds: 500),
       boxShadows: [
         BoxShadow(
-          color: Colors.blue.shade900.withOpacity(0.5),
+          color: AppColors.primaryColor.withOpacity(0.5),
           blurRadius: 8,
-          offset: Offset(0, 4),
+          offset: const Offset(0, 4),
         ),
       ],
     );

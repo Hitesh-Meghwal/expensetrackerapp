@@ -21,9 +21,8 @@ class AuthController extends GetxController {
     isLoading.value = true;
     try {
       final result = await _registerUsecase.call(id, name, email, password);
-      Get.snackbar(AppString.success, AppString.userRegisteredSuccess);
     } catch (e) {
-      Utils.showCustomSnackbar(AppString.oopsError, e.toString());
+      print(e);
     } finally {
       isLoading.value = false;
     }

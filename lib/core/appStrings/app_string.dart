@@ -17,7 +17,8 @@ class AppString {
   static const String invalidPassword = "Invalid password";
   static const String userNotFound = "User not found";
   static const String success = "Success";
-  static const String oopsError = "Oops!, Error";
+  static const String oopsError = "Oops!, ";
   static const String userRegisteredSuccess = "User Registered Successfully";
   static const String loggedInSuccess = "Logged In Successfully";
+  static const String pleaseFillAllDetails = "Please fill all details";
 }

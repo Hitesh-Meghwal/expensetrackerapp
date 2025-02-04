@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:expensetrackerapp/config/routes/app_routes.dart';
 import 'package:expensetrackerapp/core/appColors/app_colors.dart';
 import 'package:expensetrackerapp/core/appStrings/app_string.dart';
@@ -5,6 +7,8 @@ import 'package:expensetrackerapp/features/auth/presentation/controller/auth_con
 import 'package:expensetrackerapp/features/auth/presentation/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../core/utils/utils.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -123,11 +127,22 @@ class _SignupScreenState extends State<SignupScreen> {
             CustomButton(
                 onPressed: () {
                   if (_isFormValid) {
-                    authController.registerUser("1", _nameController.text,
-                        _emailController.text, _passwordController.text);
-                    Get.toNamed(AppRoutes.darhboardScreen);
+                    authController
+                        .registerUser("1", _nameController.text,
+                            _emailController.text, _passwordController.text)
+                        .then((r) {
+                      Get.snackbar(
+                          AppString.success, AppString.userRegisteredSuccess);
+                      Get.toNamed(AppRoutes.darhboardScreen);
+                    }).onError(
+                      (error, stackTrace) {
+                        Utils.showCustomSnackbar(
+                            AppString.oopsError, error.toString());
+                      },
+                    );
                   } else {
-                    Get.snackbar("", "");
+                    Utils.showCustomSnackbar(
+                        AppString.oopsError, AppString.pleaseFillAllDetails);
                   }
                 },
                 buttonName: AppString.singUpBtn,
